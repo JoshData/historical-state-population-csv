@@ -15,4 +15,4 @@ This repository also contains a Python 3 script `fetch.py` which fetches the dat
 python3 fetch.py > historical_state_population_by_year.csv
 ```
 
-Last updated in March 2019, which includes 2018 population.
+Last updated in February 2020, which includes 2019 population.
