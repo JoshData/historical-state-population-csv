@@ -27,7 +27,7 @@ for state in tqdm(states):
 	url = "https://fred.stlouisfed.org/graph/fredgraph.csv?id={}POP".format(state)
 	resp = urllib.request.urlopen(url)
 	for date, pop in csv.reader(io.TextIOWrapper(resp)):
-		if date == "DATE": continue # skip header
-		if not date.endswith("-01-01"): raise Exception(date)
+		if date == "observation_date": continue # skip header
+		if not date.endswith("-01-01"): raise Exception([url, date])
 		date = date.replace("-01-01", "")
 		W.writerow([state, date, int(round(float(pop)*1000))])
